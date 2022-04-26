@@ -16,7 +16,7 @@ jobs:
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
   PR Only:
+    if: ${{ github.event_name == 'pull_request' }}
     runs-on: ubuntu-latest
-    on: [pull_request]
     steps:
       - run: echo "It is Pull Request!"
