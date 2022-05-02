@@ -1,7 +1,6 @@
 name: E2E-Tests
 on:
   pull_request:
-    types: [opened, reopened]
   workflow_run:
     workflows: [Main] # must exactly match previous workflow name
     types: [completed]
