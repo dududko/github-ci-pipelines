@@ -2,7 +2,7 @@ name: E2E-Tests
 on:
   pull_request:
     branches:
-      - main
+      - run-on-pr-only
 jobs:
   run-e2e-tests:
     runs-on: ubuntu-latest
