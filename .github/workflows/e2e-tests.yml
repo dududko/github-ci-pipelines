@@ -10,7 +10,7 @@ on:
 jobs:
   run-e2e-tests:
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' && github.event_name == 'pull_request' }}
+    if: ${{ (github.event.workflow_run.conclusion == 'success') && (github.event_name == 'pull_request') }}
     steps:
       - name: Run tests
         run: echo Done
