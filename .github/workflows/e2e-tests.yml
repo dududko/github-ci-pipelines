@@ -1,0 +1,15 @@
+name: Tests
+on:
+  pull_request:
+    types: [opened, reopened]
+  workflow_run:
+    workflows: ["Main"] # must exactly match previous workflow name
+    types:
+      - completed
+
+jobs:
+  run-e2e-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run tests
+        run: echo Done
