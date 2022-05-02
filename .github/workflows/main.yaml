@@ -1,0 +1,7 @@
+name: Main
+on: [push, pull_request]
+jobs:
+  Build-Deploy-etc:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "This job's status is ${{ job.status }}."
