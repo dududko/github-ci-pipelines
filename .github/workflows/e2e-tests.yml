@@ -1,17 +1,10 @@
 name: E2E-Tests
 on:
-  pull_request:
-  workflow_run:
-    workflows: [Main] # must exactly match previous workflow name
-    # https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#workflow_run
-    types: [completed] 
-    # branches-ignore: [master, main]
-
+  pull_request
 jobs:
   run-e2e-tests:
     runs-on: ubuntu-latest
-    # https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#running-a-workflow-based-on-the-conclusion-of-another-workflow
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    if: ${{ github.base_ref == 'master' }}
     steps:
       - name: Run E2E tests
         run: echo Done
