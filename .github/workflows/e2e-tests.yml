@@ -1,7 +1,10 @@
-name: Main
-on: [push, pull_request]
+name: E2E-Tests
+on:
+  pull_request
 jobs:
-  Build-Deploy-etc:
+  run-e2e-tests:
     runs-on: ubuntu-latest
+    if: ${{ github.base_ref == 'main' }}
     steps:
-      - run: echo "This job's status is ${{ job.status }}."
+      - name: Run E2E tests
+        run: echo Done
