@@ -7,4 +7,4 @@ jobs:
     if: ${{ github.base_ref == 'main' }}
     steps:
       - name: Run E2E tests
-        run: echo Done
+        run: echo Done ${{ github.base_ref }}
